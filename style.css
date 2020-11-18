@@ -1,0 +1,266 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	scroll-behavior: smooth;
+	height: 100%;
+}
+
+body {
+	background-color: #fefefe;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	letter-spacing: 0.5px;
+	color: #333;
+}
+
+
+
+header {
+	text-align: center;
+	font-size: 3em;
+	padding: 50px 0px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	text-align: center;
+}
+hr {
+	border-top: 7px solid #777;
+	width: 50%;
+	margin: 0px auto;
+}
+h1 {
+	font-size: 3em;
+}
+
+h2{
+	margin-top: 8px;
+	padding-bottom: 8px;
+}
+
+h3, p {
+	padding: 8px;
+	word-wrap: break-word;
+ 	word-break: break-all;
+}
+
+p {
+	padding-top: 0px;
+}
+
+h4 {
+	font-size: 6em;
+}
+
+
+.status-box {
+	padding: 5px 0px;
+}
+
+#wrapper {
+	margin: 0px auto;
+	width: 70%;
+	background: #fefefe;
+	padding-bottom: 50px;
+}
+
+#grid-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: minmax(300px, auto);
+	grid-gap: 10px;
+}
+
+.box {
+	max-width: 350px;
+	position: relative;
+	background: #fefefe;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: 0.2s ease-in-out;
+	opacity: 0.8;
+}
+
+.box:hover {
+	background: #f7f7f7;
+	opacity: 1;
+}
+
+.box:hover > .close {
+	visibility: visible;
+}
+
+.box:hover .edit-button {
+	visibility: visible;
+}
+
+.dot {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	display: inline-block;
+	background: #ccc;
+	margin: 0px 3px;
+}
+
+.red {
+	background-color: #ff7c5c;
+}
+.red:hover {
+	background-color: #ffbbab;
+}
+.yellow{
+	background-color: #ffd35c;
+}
+.yellow:hover {
+	background-color: #ffebb5;
+}
+.green {
+	background-color: #a4c24c;
+}
+.green:hover {
+	background-color: #d0eb83;
+}
+
+#add-form {
+	width: 70%;
+}
+
+#add-form input {
+	padding: 2px;
+	background-color: #fefefe;
+	border: none;
+	font-family: 'Raleway', sans-serif;
+	border-bottom: 2px solid #777;
+	color: #333;
+	outline: none;
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+
+select {
+	padding: 2px;
+  	display: inline-block;
+ 	border: none;
+ 	border-bottom: 2px solid #777;
+ 	font-family: 'Raleway', sans-serif;
+  	font-size: 0.8em;
+  	float: right;
+}
+
+label{
+	padding: 2px;
+	display: inline-block;
+}
+
+
+#add-form button {
+	display: inline-block;
+	border: none;
+	background-color: #454545;
+	padding: 8px 12px;
+	font-family: 'Raleway', sans-serif;
+	color: #fefefe;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	letter-spacing: 0.5px;
+}
+
+#add-button {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s, color 0.1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  text-align: center;
+}
+
+.card-front:hover {
+	color: #ccc;
+}
+
+.card-back {
+	background: #f7f7f7;
+  	transform: rotateY( 180deg );
+  	opacity: 1;
+  	cursor: default;
+}
+
+#add-button.is-flipped {
+  transform: rotateY(180deg);
+}
+
+
+/* close button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  visibility: hidden;
+  opacity: 0.3;
+  transition: visibility 0.15s ease-in-out;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+#flip-button {
+	visibility: visible;
+}
+
+.edit-button{
+	visibility: hidden;
+	transition: visibility 0.15s ease-in-out;
+	opacity: 0.3;
+	position: absolute;
+	right: 30px;
+	cursor: pointer;
+}
+
+.edit-button:hover {
+	opacity: 1;
+}
+
+
+
+
+/****** RESPONSIVE *******/
+@media only screen and (max-width: 600px) {
+	#grid-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

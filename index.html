@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bookshelf</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/0c984a6646.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div id="wrapper">
+
+	<header>bookshelf
+		<hr>
+	</header>
+
+	<div id="grid-container">
+		
+		<!-- <div class="box">
+			<div class="close"></div>
+				<h1>💖</h1>
+				<h3>BOOK TITLE</h3>
+				<p>author</p>
+				<div class="status-box">
+					<span class="red dot"></span>
+					<span class="dot"></span>
+					<span class="dot"></span>
+					<div class="fas fa-pen" id="edit-button"></div>
+				</div>
+		</div> -->
+
+
+		<div id="add-button">
+			<div class="card-face card-front box" id="add-sign"><h4>+</h4></div>
+			<div class="box card-face card-back">
+
+			<div class="close" id="flip-button"></div>
+			<h2>add book</h2>
+			<form id="add-form">
+				<label for="cars">genre</label>
+				<select id="genre" name="genre">
+				    <option value="mystery">mystery</option>
+				    <option value="horror">horror</option>
+				    <option value="romance">romance</option>
+				    <option value="fantasy">fantasy</option>
+					<option value="non-fiction">non-fiction</option>
+					<option value="others">others</option>
+				</select>
+				<br>
+  			<label for="title">title</label><br>
+  			<input type="text" name="title" autocomplete="off" required><br>
+  			<label for="cars">author</label><br>
+  			<input type="text" name="author" autocomplete="off" required><br>
+  			
+  			<label for="status">read status</label>
+				<select id="status">
+				    <option value="unread">unread</option>
+				    <option value="reading">reading</option>
+				    <option value="read">read</option>
+				</select>
+  			<!-- <span class="dot red"></span>
+  			<span class="dot yellow"></span>
+  			<span class="dot green"></span> -->
+
+
+  			<br>
+  			<!-- <input type="submit" value="add"> -->
+  			<button>add</button>
+		</form>
+
+
+	</div>
+	
+
+		</div>
+	</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
