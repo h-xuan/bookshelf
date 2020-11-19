@@ -17,8 +17,6 @@ body {
 	color: #333;
 }
 
-
-
 header {
 	text-align: center;
 	font-size: 3em;
@@ -27,6 +25,20 @@ header {
 	letter-spacing: 3px;
 	text-align: center;
 }
+
+footer {
+	text-align: center;
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	font-size: 0.8em;
+}
+
+a {
+	text-decoration: inherit;
+	color: inherit;
+}
+
 hr {
 	border-top: 7px solid #777;
 	width: 50%;
@@ -61,10 +73,13 @@ h4 {
 }
 
 #wrapper {
+	min-height: 100%;
 	margin: 0px auto;
 	width: 70%;
 	background: #fefefe;
 	padding-bottom: 50px;
+	position: relative;
+	
 }
 
 #grid-container {
@@ -259,8 +274,15 @@ label{
 
 
 /****** RESPONSIVE *******/
+
+@media only screen and (max-width: 992px) {
+	#grid-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
 @media only screen and (max-width: 600px) {
 	#grid-container {
 		grid-template-columns: repeat(1, 1fr);
 	}
 }
+
