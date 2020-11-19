@@ -33,6 +33,7 @@ Book.prototype.displayBook = function(e) {
 
 	const editbutt = document.createElement('div');
 	editbutt.classList.add('fas', 'fa-pen','edit-button');
+	addEditFunction(editbutt);
 
 	const ball1 = document.createElement('span');
 	const ball2 = document.createElement('span');
@@ -168,5 +169,47 @@ document.addEventListener('invalid', (function () {
 
 
 
-//// change status INCOMPLETE ////
+//// change status  ////
+var statusClicked = false;
 
+function addEditFunction(button) {
+	button.addEventListener('click', function() {
+		balls = [];
+
+		greenBall = button.previousElementSibling;
+		yellowBall = greenBall.previousElementSibling;
+		redBall = yellowBall.previousElementSibling;
+
+		greenBall.classList.add('green');
+		yellowBall.classList.add('yellow');
+		redBall.classList.add('red');
+
+		balls.push(greenBall, yellowBall, redBall);
+		for (var ball of balls) {
+			ball.setAttribute("style", "opacity: 0.5; cursor: pointer");
+
+			ball.addEventListener('click', function(){
+				switch(this) {
+					case redBall:
+						yellowBall.classList.remove('yellow');
+						greenBall.classList.remove('green');
+						break;
+					case yellowBall:
+						redBall.classList.remove('red');
+						greenBall.classList.remove('green');
+						break;
+					case greenBall:
+						yellowBall.classList.remove('yellow');
+						redBall.classList.remove('red');
+					default:
+						break;
+				};
+
+				for (var ball of balls){
+					ball.setAttribute("style", "opacity: 1");
+				}
+			});
+		};
+
+	});
+};
